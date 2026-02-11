@@ -295,7 +295,7 @@ end)
             v850.Parent = v849
             local v851 = Instance.new("TextLabel")
             v851.Size = UDim2.new(1, 0, 1, 0)
-            v851.Text = "T3'S CLAN SCRIPT - Chat Logs"
+            v851.Text = "SL CLAN SCRIPT - Chat Logs"
             v851.TextColor3 = Color3.fromRGB(255, 255, 255)
             v851.BackgroundTransparency = 1
             v851.Parent = v850
@@ -751,7 +751,7 @@ end)
             end
         end
         
-        -- Create player labels for the local player
+        Create player labels for the local player
         createPlayerLabels(localPlayer)
         
         game.Players.LocalPlayer.CharacterAdded:Connect(function()
@@ -860,9 +860,6 @@ end)
 
 local stopwatchLabel = Server:AddLabel("Time Elapsed in Server: 0d 0h 0m 0s")
 
-    Server:AddButton("Stats Spoofer", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/IJNTJNNPTJ/farm/refs/heads/main/.SS"))()
-end)
 
 local Calc = window:AddTab("Calc")
 
@@ -2905,7 +2902,6 @@ end)
 local Credits = window:AddTab("Credits")
 
 Credits:AddLabel("MADE BY SL_GHOST")
-
 
 
 
