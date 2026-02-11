@@ -29,7 +29,7 @@ local Player = Players.LocalPlayer
 local muscleEvent = Player:WaitForChild("muscleEvent")
 local display = Player.DisplayName
 
-local window = library:AddWindow("Made by: XxD3ATHKlNGxX | Welcome "..display, {
+local window = library:AddWindow("SL HUB PUBLIC | Welcome "..display, {
     main_color = Color3.fromRGB(139, 0, 0), -- Color
     min_size = Vector2.new(550, 620), -- Size of the GUI
     can_resize = false,
@@ -2905,4 +2905,5 @@ end)
 local Credits = window:AddTab("Credits")
 
 Credits:AddLabel("MADE BY SL_GHOST")
+
 
