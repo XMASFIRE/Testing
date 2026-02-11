@@ -1,4 +1,4 @@
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/0o0o0o0o0o0o0o0o0o0o0o0o/0o/refs/heads/main/lolll", true))()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/XMASFIRE/Gui/refs/heads/main/ML%20GUI", true))()
 
     local v213 = Vector3.new(2048, 0, 2048)
     local v214 = 20
@@ -2904,9 +2904,5 @@ end)
 
 local Credits = window:AddTab("Credits")
 
-Credits:AddLabel("xxd3athk1ngxx")
-Credits:AddLabel("discord: xxd3athk1ngxx")
-Credits:AddLabel("RK / Reborn Killers ON TOP")
-Credits:AddLabel("God On Top")
+Credits:AddLabel("MADE BY SL_GHOST")
 
-Credits:AddLabel("Im Back Bitch")
