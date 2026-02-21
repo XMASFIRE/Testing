@@ -94,7 +94,7 @@ Scripts.Visible = false
 local Layout = Instance.new("UIListLayout", Scripts)
 Layout.Padding = UDim.new(0,6)
 
--- BUTTON CREATOR
+-- BUTTON CREATOR (hide gui on click)
 local function NewScript(name,link)
     local btn = Instance.new("TextButton", Scripts)
     btn.Size = UDim2.new(0.8,0,0,40)
@@ -105,13 +105,12 @@ local function NewScript(name,link)
     Instance.new("UICorner", btn)
 
     btn.MouseButton1Click:Connect(function()
-        btn.Text = "LOADING..."
+        Gui.Enabled = false
         loadstring(game:HttpGet(link))()
-        btn.Text = name.." ✅"
     end)
 end
 
--- ANTI AFK RAW (no key)
+-- ANTI AFK RAW (no hide)
 local Anti = Instance.new("TextButton", Scripts)
 Anti.Size = UDim2.new(0.8,0,0,40)
 Anti.Position = UDim2.new(0.1,0,0,0)
@@ -123,14 +122,14 @@ Instance.new("UICorner", Anti)
 Anti.MouseButton1Click:Connect(function()
     Anti.Text = "LOADING..."
     loadstring(game:HttpGet("ANTI_AFK_RAW_LINK"))()
-    Anti.Text = "ANTI AFK LOADED ✅"
+    Anti.Text = "ANTI AFK LOADED"
 end)
 
 -- GAME SCRIPTS
-NewScript("Muscle Legends","ML_RAW_LINK")
-NewScript("Blox Fruits","BF_RAW_LINK")
+NewScript("Muscle Legends","https://raw.githubusercontent.com/XMASFIRE/SL-HUB-D/refs/heads/main/SL%20HUB%20ML%20(1).txt")
+NewScript("Blox Fruits","https://raw.githubusercontent.com/XMASFIRE/SL-HUB-D/refs/heads/main/BloxFruits")
 NewScript("Legends Of Speed","LS_RAW_LINK")
-NewScript("Escape Tsunami","ET_RAW_LINK")
+NewScript("Escape Tsunami","https://raw.githubusercontent.com/XMASFIRE/SL-HUB-D/refs/heads/main/Tusnammi.txt")
 
 -- KEY VERIFY
 Verify.MouseButton1Click:Connect(function()
