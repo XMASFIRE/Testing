@@ -18,7 +18,7 @@ local Stroke = Instance.new("UIStroke", Main)
 Stroke.Color = Color3.fromRGB(255,0,0)
 Stroke.Thickness = 3
 
--- LEFT
+-- LEFT SIDE
 local Left = Instance.new("Frame", Main)
 Left.Size = UDim2.new(0.45,0,1,0)
 Left.BackgroundTransparency = 1
@@ -35,12 +35,12 @@ local Features = Instance.new("TextLabel", Left)
 Features.Size = UDim2.new(1,-20,1,-70)
 Features.Position = UDim2.new(0,10,0,60)
 Features.BackgroundTransparency = 1
-Features.Text = "Features\n⚡ FAST\n🛡 Safe\n👑 MADE BY SL_GHOST 👻"
+Features.Text = "R ⚡ FAST\nG 🛡 SAFE\nP 👑 GOOD SCRIPTS\n💡 Easy to use\n⚡ Fast Execution\n🚀 No lag\n👻 MADE BY SL_GHOST"
 Features.TextColor3 = Color3.fromRGB(255,255,255)
 Features.TextXAlignment = Enum.TextXAlignment.Left
 Features.TextYAlignment = Enum.TextYAlignment.Top
 
--- RIGHT
+-- RIGHT SIDE
 local Right = Instance.new("Frame", Main)
 Right.Size = UDim2.new(0.55,0,1,0)
 Right.Position = UDim2.new(0.45,0,0,0)
@@ -84,15 +84,15 @@ GetKey.BackgroundColor3 = Color3.fromRGB(255,0,0)
 GetKey.TextColor3 = Color3.fromRGB(255,255,255)
 Instance.new("UICorner", GetKey)
 
+-- MESSAGE LABEL
 local MsgLabel = Instance.new("TextLabel", Right)
 MsgLabel.Size = UDim2.new(0.8,0,0,30)
-MsgLabel.Position = UDim2.new(0.1,0,0.75,0)
-MsgLabel.Text = ""
-MsgLabel.TextColor3 = Color3.fromRGB(255,0,0)
+MsgLabel.Position = UDim2.new(0.1,0,0.8,0)
 MsgLabel.BackgroundTransparency = 1
-MsgLabel.TextScaled = true
+MsgLabel.TextColor3 = Color3.fromRGB(255,255,255)
+MsgLabel.Visible = false
 
--- SCRIPTS FRAME
+-- SCRIPTS
 local Scripts = Instance.new("Frame", Right)
 Scripts.Size = UDim2.new(1,0,0.55,0)
 Scripts.Position = UDim2.new(0,0,0.2,0)
@@ -102,11 +102,9 @@ Scripts.Visible = false
 local Layout = Instance.new("UIListLayout", Scripts)
 Layout.Padding = UDim.new(0,6)
 
--- BUTTON CREATOR
 local function NewScript(name,link)
     local btn = Instance.new("TextButton", Scripts)
     btn.Size = UDim2.new(0.8,0,0,40)
-    btn.Position = UDim2.new(0.1,0,0,0)
     btn.Text = name
     btn.BackgroundColor3 = Color3.fromRGB(255,0,0)
     btn.TextColor3 = Color3.fromRGB(255,255,255)
@@ -121,7 +119,6 @@ end
 -- ANTI AFK RAW
 local Anti = Instance.new("TextButton", Scripts)
 Anti.Size = UDim2.new(0.8,0,0,40)
-Anti.Position = UDim2.new(0.1,0,0,0)
 Anti.Text = "ANTI AFK"
 Anti.BackgroundColor3 = Color3.fromRGB(255,0,0)
 Anti.TextColor3 = Color3.fromRGB(255,255,255)
@@ -136,12 +133,17 @@ end)
 -- GAME SCRIPTS
 NewScript("Muscle Legends","https://raw.githubusercontent.com/XMASFIRE/SL-HUB-D/refs/heads/main/SL%20HUB%20ML%20(1).txt")
 NewScript("Blox Fruits","https://raw.githubusercontent.com/XMASFIRE/SL-HUB-D/refs/heads/main/BloxFruits")
-NewScript("Legends Of Speed","LS_RAW_LINK")
+NewScript("Legends Of Speed","https://raw.githubusercontent.com/XMASFIRE/SL-HUB-D/refs/heads/main/SL%20HUB%20LOS")
 NewScript("Escape Tsunami","https://raw.githubusercontent.com/XMASFIRE/SL-HUB-D/refs/heads/main/Tusnammi.txt")
 
--- KEY VERIFY
+-- VERIFY KEY
 Verify.MouseButton1Click:Connect(function()
     if Box.Text == CorrectKey then
+        MsgLabel.Text = "Key verified ✅"
+        MsgLabel.Visible = true
+        task.wait(1)
+        MsgLabel.Visible = false
+
         Box.Visible = false
         Verify.Visible = false
         Discord.Visible = false
@@ -151,20 +153,25 @@ Verify.MouseButton1Click:Connect(function()
     else
         MsgLabel.Text = "Wrong key ❌"
         MsgLabel.Visible = true
-        task.delay(1,function()
-            MsgLabel.Visible = false
-        end)
+        task.wait(1)
+        MsgLabel.Visible = false
     end
 end)
 
 -- GET KEY
 GetKey.MouseButton1Click:Connect(function()
-    setclipboard("SL-ML-2026")
-    GetKey.Text = "KEY COPIED ✅"
+    setclipboard("KEY LINK")
+    MsgLabel.Text = "Key link copied ✅"
+    MsgLabel.Visible = true
+    task.wait(1)
+    MsgLabel.Visible = false
 end)
 
 -- DISCORD
 Discord.MouseButton1Click:Connect(function()
     setclipboard("https://discord.gg/yourserver")
-    Discord.Text = "DISCORD LINK COPIED ✅"
+    MsgLabel.Text = "Discord copied ✅"
+    MsgLabel.Visible = true
+    task.wait(1)
+    MsgLabel.Visible = false
 end)
