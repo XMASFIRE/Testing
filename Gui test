@@ -1,3 +1,4 @@
+-- SCREEN GUI
 local Gui = Instance.new("ScreenGui", game.CoreGui)
 Gui.Name = "SL_KEY_UI"
 
@@ -13,7 +14,7 @@ local Stroke = Instance.new("UIStroke", Main)
 Stroke.Color = Color3.fromRGB(255,0,0)
 Stroke.Thickness = 3
 
--- LEFT SIDE
+-- LEFT
 local Left = Instance.new("Frame", Main)
 Left.Size = UDim2.new(0.45,0,1,0)
 Left.BackgroundTransparency = 1
@@ -38,12 +39,13 @@ Features.TextColor3 = Color3.fromRGB(255,255,255)
 Features.Text =
 "🔥 24/7 Support\n⚡ Regular Features\n🛡 Safe & Secure\n👑 Made By SL Team\n🎮 Multi-Game Support\n🚀 Fast Execution\n💡 Easy To Use"
 
--- RIGHT SIDE
+-- RIGHT
 local Right = Instance.new("Frame", Main)
 Right.Size = UDim2.new(0.55,0,1,0)
 Right.Position = UDim2.new(0.45,0,0,0)
 Right.BackgroundTransparency = 1
 
+-- KEY SYSTEM
 local KeyTitle = Instance.new("TextLabel", Right)
 KeyTitle.Size = UDim2.new(1,0,0,60)
 KeyTitle.BackgroundTransparency = 1
@@ -72,22 +74,98 @@ Verify.BackgroundColor3 = Color3.fromRGB(255,0,0)
 Verify.TextColor3 = Color3.fromRGB(255,255,255)
 Instance.new("UICorner", Verify)
 
-local Discord = Instance.new("TextButton", Right)
-Discord.Size = UDim2.new(0.8,0,0,45)
-Discord.Position = UDim2.new(0.1,0,0.65,0)
-Discord.Text = "JOIN DISCORD"
-Discord.Font = Enum.Font.GothamBold
-Discord.TextSize = 15
-Discord.BackgroundColor3 = Color3.fromRGB(255,0,0)
-Discord.TextColor3 = Color3.fromRGB(255,255,255)
-Instance.new("UICorner", Discord)
-
 local GetKey = Instance.new("TextButton", Right)
 GetKey.Size = UDim2.new(0.8,0,0,45)
-GetKey.Position = UDim2.new(0.1,0,0.8,0)
+GetKey.Position = UDim2.new(0.1,0,0.65,0)
 GetKey.Text = "GET KEY"
 GetKey.Font = Enum.Font.GothamBold
 GetKey.TextSize = 15
 GetKey.BackgroundColor3 = Color3.fromRGB(255,0,0)
 GetKey.TextColor3 = Color3.fromRGB(255,255,255)
 Instance.new("UICorner", GetKey)
+
+-- ANTI AFK BUTTON
+local AntiBtn = Instance.new("TextButton", Right)
+AntiBtn.Size = UDim2.new(0.8,0,0,45)
+AntiBtn.Position = UDim2.new(0.1,0,0.82,0)
+AntiBtn.Text = "LOAD ANTI AFK"
+AntiBtn.Font = Enum.Font.GothamBold
+AntiBtn.TextSize = 15
+AntiBtn.BackgroundColor3 = Color3.fromRGB(255,0,0)
+AntiBtn.TextColor3 = Color3.fromRGB(255,255,255)
+Instance.new("UICorner", AntiBtn)
+
+-- 4 GAMES BUTTONS (hidden until key correct)
+local Games = Instance.new("Frame", Right)
+Games.Size = UDim2.new(1,0,0.4,0)
+Games.Position = UDim2.new(0,0,0.45,0)
+Games.BackgroundTransparency = 1
+Games.Visible = false
+
+local ML = Instance.new("TextButton", Games)
+ML.Size = UDim2.new(0.48,0,0.45,0)
+ML.Position = UDim2.new(0,0,0,0)
+ML.Text = "Muscle Legends"
+ML.BackgroundColor3 = Color3.fromRGB(255,0,0)
+ML.TextColor3 = Color3.fromRGB(255,255,255)
+Instance.new("UICorner", ML)
+
+local BF = ML:Clone()
+BF.Parent = Games
+BF.Position = UDim2.new(0.52,0,0,0)
+BF.Text = "Blox Fruits"
+
+local LS = ML:Clone()
+LS.Parent = Games
+LS.Position = UDim2.new(0,0,0.55,0)
+LS.Text = "Legends Speed"
+
+local ET = ML:Clone()
+ET.Parent = Games
+ET.Position = UDim2.new(0.52,0,0.55,0)
+ET.Text = "Escape Tsunami"
+
+-- KEY
+local CorrectKey = "SL-ML-2026"
+
+Verify.MouseButton1Click:Connect(function()
+    if Box.Text == CorrectKey then
+        Verify.Text = "KEY CORRECT ✅"
+        Verify.BackgroundColor3 = Color3.fromRGB(0,170,0)
+        Games.Visible = true
+        GetKey.Visible = false
+        AntiBtn.Visible = true
+    else
+        Verify.Text = "WRONG KEY ❌"
+        Verify.BackgroundColor3 = Color3.fromRGB(170,0,0)
+    end
+end)
+
+-- GET KEY BUTTON
+GetKey.MouseButton1Click:Connect(function()
+    setclipboard("https://your-key-link.com")
+end)
+
+-- ANTI AFK LOADSTRING
+AntiBtn.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet("https://your-antiafk-script-link.lua"))()
+    AntiBtn.Text = "ANTI AFK LOADED ✅"
+    AntiBtn.BackgroundColor3 = Color3.fromRGB(0,170,0)
+end)
+
+-- GAMES LOADSTRING BUTTONS (غير اللينكات حسب سكربت كل لعبة)
+ML.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet("ML_SCRIPT_LINK"))()
+end)
+
+BF.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet("BF_SCRIPT_LINK"))()
+end)
+
+LS.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet("LS_SCRIPT_LINK"))()
+end)
+
+ET.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet("ET_SCRIPT_LINK"))()
+end)
