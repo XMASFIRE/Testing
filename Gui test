@@ -133,7 +133,7 @@ NewScript("Muscle Legends","https://raw.githubusercontent.com/XMASFIRE/SL-HUB-D/
 NewScript("Blox Fruits","https://raw.githubusercontent.com/XMASFIRE/SL-HUB-D/refs/heads/main/BloxFruits")
 NewScript("Legends Of Speed","https://raw.githubusercontent.com/XMASFIRE/SL-HUB-D/refs/heads/main/SL%20HUB%20LOS")
 NewScript("Escape Tsunami","https://raw.githubusercontent.com/XMASFIRE/SL-HUB-D/refs/heads/main/Tusnammi.txt")
-NewScript("Anti AFK","")
+NewScript("Anti AFK","https://raw.githubusercontent.com/XMASFIRE/SL-HUB-D/refs/heads/main/SL%20HUB%20ANTI%20AFK")
 -- Key system
 local CorrectKey = "SLONTOP"
 Verify.MouseButton1Click:Connect(function()
