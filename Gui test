@@ -1,4 +1,4 @@
--- SCREEN GUI
+-- GUI
 local Gui = Instance.new("ScreenGui", game.CoreGui)
 Gui.Name = "SL_KEY_UI"
 
@@ -36,8 +36,7 @@ Features.TextYAlignment = Enum.TextYAlignment.Top
 Features.Font = Enum.Font.Gotham
 Features.TextSize = 16
 Features.TextColor3 = Color3.fromRGB(255,255,255)
-Features.Text =
-"🔥 24/7 Support\n⚡ Regular Features\n🛡 Safe & Secure\n👑 Made By SL Team\n🎮 Multi-Game Support\n🚀 Fast Execution\n💡 Easy To Use"
+Features.Text = "🎁 Giveaways\n⚡ Features\n🛡 Safe\n👑 SL Team"
 
 -- RIGHT
 local Right = Instance.new("Frame", Main)
@@ -45,127 +44,73 @@ Right.Size = UDim2.new(0.55,0,1,0)
 Right.Position = UDim2.new(0.45,0,0,0)
 Right.BackgroundTransparency = 1
 
--- KEY SYSTEM
-local KeyTitle = Instance.new("TextLabel", Right)
-KeyTitle.Size = UDim2.new(1,0,0,60)
-KeyTitle.BackgroundTransparency = 1
-KeyTitle.Text = "🔑 KEY SYSTEM 🔑"
-KeyTitle.Font = Enum.Font.GothamBold
-KeyTitle.TextSize = 20
-KeyTitle.TextColor3 = Color3.fromRGB(255,80,80)
-
 local Box = Instance.new("TextBox", Right)
 Box.Size = UDim2.new(0.8,0,0,45)
-Box.Position = UDim2.new(0.1,0,0.25,0)
-Box.PlaceholderText = "Enter Key Here..."
-Box.Font = Enum.Font.Gotham
-Box.TextSize = 16
+Box.Position = UDim2.new(0.1,0,0.2,0)
+Box.PlaceholderText = "Enter Key..."
 Box.BackgroundColor3 = Color3.fromRGB(25,25,25)
 Box.TextColor3 = Color3.fromRGB(255,255,255)
 Instance.new("UICorner", Box)
 
 local Verify = Instance.new("TextButton", Right)
-Verify.Size = UDim2.new(0.8,0,0,50)
-Verify.Position = UDim2.new(0.1,0,0.45,0)
-Verify.Text = "VERIFY KEY"
-Verify.Font = Enum.Font.GothamBold
-Verify.TextSize = 16
+Verify.Size = UDim2.new(0.8,0,0,45)
+Verify.Position = UDim2.new(0.1,0,0.35,0)
+Verify.Text = "VERIFY"
 Verify.BackgroundColor3 = Color3.fromRGB(255,0,0)
 Verify.TextColor3 = Color3.fromRGB(255,255,255)
 Instance.new("UICorner", Verify)
 
-local GetKey = Instance.new("TextButton", Right)
-GetKey.Size = UDim2.new(0.8,0,0,45)
-GetKey.Position = UDim2.new(0.1,0,0.65,0)
-GetKey.Text = "GET KEY"
-GetKey.Font = Enum.Font.GothamBold
-GetKey.TextSize = 15
-GetKey.BackgroundColor3 = Color3.fromRGB(255,0,0)
-GetKey.TextColor3 = Color3.fromRGB(255,255,255)
-Instance.new("UICorner", GetKey)
-
--- ANTI AFK BUTTON
+-- 🔘 AntiAFK (بدون key)
 local AntiBtn = Instance.new("TextButton", Right)
 AntiBtn.Size = UDim2.new(0.8,0,0,45)
-AntiBtn.Position = UDim2.new(0.1,0,0.82,0)
+AntiBtn.Position = UDim2.new(0.1,0,0.5,0)
 AntiBtn.Text = "LOAD ANTI AFK"
-AntiBtn.Font = Enum.Font.GothamBold
-AntiBtn.TextSize = 15
 AntiBtn.BackgroundColor3 = Color3.fromRGB(255,0,0)
 AntiBtn.TextColor3 = Color3.fromRGB(255,255,255)
 Instance.new("UICorner", AntiBtn)
 
--- 4 GAMES BUTTONS (hidden until key correct)
-local Games = Instance.new("Frame", Right)
-Games.Size = UDim2.new(1,0,0.4,0)
-Games.Position = UDim2.new(0,0,0.45,0)
-Games.BackgroundTransparency = 1
-Games.Visible = false
-
-local ML = Instance.new("TextButton", Games)
-ML.Size = UDim2.new(0.48,0,0.45,0)
-ML.Position = UDim2.new(0,0,0,0)
-ML.Text = "Muscle Legends"
-ML.BackgroundColor3 = Color3.fromRGB(255,0,0)
-ML.TextColor3 = Color3.fromRGB(255,255,255)
-Instance.new("UICorner", ML)
-
-local BF = ML:Clone()
-BF.Parent = Games
-BF.Position = UDim2.new(0.52,0,0,0)
-BF.Text = "Blox Fruits"
-
-local LS = ML:Clone()
-LS.Parent = Games
-LS.Position = UDim2.new(0,0,0.55,0)
-LS.Text = "Legends Speed"
-
-local ET = ML:Clone()
-ET.Parent = Games
-ET.Position = UDim2.new(0.52,0,0.55,0)
-ET.Text = "Escape Tsunami"
-
--- KEY
-local CorrectKey = "SL-ML-2026"
-
-Verify.MouseButton1Click:Connect(function()
-    if Box.Text == CorrectKey then
-        Verify.Text = "KEY CORRECT ✅"
-        Verify.BackgroundColor3 = Color3.fromRGB(0,170,0)
-        Games.Visible = true
-        GetKey.Visible = false
-        AntiBtn.Visible = true
-    else
-        Verify.Text = "WRONG KEY ❌"
-        Verify.BackgroundColor3 = Color3.fromRGB(170,0,0)
-    end
-end)
-
--- GET KEY BUTTON
-GetKey.MouseButton1Click:Connect(function()
-    setclipboard("https://your-key-link.com")
-end)
-
--- ANTI AFK LOADSTRING
 AntiBtn.MouseButton1Click:Connect(function()
     loadstring(game:HttpGet("https://your-antiafk-script-link.lua"))()
     AntiBtn.Text = "ANTI AFK LOADED ✅"
     AntiBtn.BackgroundColor3 = Color3.fromRGB(0,170,0)
 end)
 
--- GAMES LOADSTRING BUTTONS (غير اللينكات حسب سكربت كل لعبة)
-ML.MouseButton1Click:Connect(function()
-    loadstring(game:HttpGet("ML_SCRIPT_LINK"))()
-end)
+-- سكربتات كنص
+local Scripts = Instance.new("Frame", Right)
+Scripts.Size = UDim2.new(1,0,0.5,0)
+Scripts.Position = UDim2.new(0,0,0.2,0)
+Scripts.BackgroundTransparency = 1
+Scripts.Visible = false
 
-BF.MouseButton1Click:Connect(function()
-    loadstring(game:HttpGet("BF_SCRIPT_LINK"))()
-end)
+local function NewScript(name,pos,link)
+    local txt = Instance.new("TextButton", Scripts)
+    txt.Size = UDim2.new(1,0,0,35)
+    txt.Position = UDim2.new(0,0,0,pos)
+    txt.BackgroundTransparency = 1
+    txt.Text = name
+    txt.TextColor3 = Color3.fromRGB(255,80,80)
+    txt.Font = Enum.Font.GothamBold
+    txt.TextSize = 18
 
-LS.MouseButton1Click:Connect(function()
-    loadstring(game:HttpGet("LS_SCRIPT_LINK"))()
-end)
+    txt.MouseButton1Click:Connect(function()
+        loadstring(game:HttpGet(link))()
+    end)
+end
 
-ET.MouseButton1Click:Connect(function()
-    loadstring(game:HttpGet("ET_SCRIPT_LINK"))()
+NewScript("Muscle Legends Script",0,"ML_SCRIPT_LINK")
+NewScript("Blox Fruits Script",0.15,"BF_SCRIPT_LINK")
+NewScript("Legends Of Speed Script",0.30,"LS_SCRIPT_LINK")
+NewScript("Escape Tsunami Script",0.45,"ET_SCRIPT_LINK")
+
+-- KEY
+local CorrectKey = "SL-ML-2026"
+
+Verify.MouseButton1Click:Connect(function()
+    if Box.Text == CorrectKey then
+        Verify.Visible = false
+        Box.Visible = false
+        Features.Visible = false
+        Title.Text = "🔥 SCRIPTS 🔥"
+        Scripts.Visible = true
+    end
 end)
