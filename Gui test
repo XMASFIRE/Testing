@@ -35,7 +35,7 @@ local Features = Instance.new("TextLabel", Left)
 Features.Size = UDim2.new(1,-20,1,-70)
 Features.Position = UDim2.new(0,10,0,60)
 Features.BackgroundTransparency = 1
-Features.Text = "🎁 Giveaways\n⚡ Features\n🛡 Safe\n👑 SL Team"
+Features.Text = "Features\n⚡ FAST\n🛡 Safe\n👑  MADE BY SL _GHOST"
 Features.TextColor3 = Color3.fromRGB(255,255,255)
 Features.TextXAlignment = Enum.TextXAlignment.Left
 Features.TextYAlignment = Enum.TextYAlignment.Top
@@ -145,14 +145,14 @@ Verify.MouseButton1Click:Connect(function()
     end
 end)
 
--- GET KEY
+ GET KEY
 GetKey.MouseButton1Click:Connect(function()
-    setclipboard("https://yourkeylink.com")
-    GetKey.Text = "COPIED"
+    setclipboard("KEY ")
+    GetKey.Text = "KEY LINK COPIED"
 end)
 
 -- DISCORD
 Discord.MouseButton1Click:Connect(function()
     setclipboard("https://discord.gg/yourserver")
-    Discord.Text = "COPIED"
+    Discord.Text = " DISCORD INVITE LINK COPIED"
 end)
