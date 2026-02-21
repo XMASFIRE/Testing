@@ -1,0 +1,93 @@
+local Gui = Instance.new("ScreenGui", game.CoreGui)
+Gui.Name = "SL_KEY_UI"
+
+local Main = Instance.new("Frame", Gui)
+Main.Size = UDim2.new(0,700,0,350)
+Main.Position = UDim2.new(0.5,-350,0.5,-175)
+Main.BackgroundColor3 = Color3.fromRGB(15,15,15)
+Main.Active = true
+Main.Draggable = true
+Instance.new("UICorner", Main)
+
+local Stroke = Instance.new("UIStroke", Main)
+Stroke.Color = Color3.fromRGB(255,0,0)
+Stroke.Thickness = 3
+
+-- LEFT SIDE
+local Left = Instance.new("Frame", Main)
+Left.Size = UDim2.new(0.45,0,1,0)
+Left.BackgroundTransparency = 1
+
+local Title = Instance.new("TextLabel", Left)
+Title.Size = UDim2.new(1,0,0,60)
+Title.BackgroundTransparency = 1
+Title.Text = "🔥 SL HUB 🔥"
+Title.Font = Enum.Font.GothamBold
+Title.TextSize = 22
+Title.TextColor3 = Color3.fromRGB(255,80,80)
+
+local Features = Instance.new("TextLabel", Left)
+Features.Size = UDim2.new(1,-20,1,-70)
+Features.Position = UDim2.new(0,10,0,60)
+Features.BackgroundTransparency = 1
+Features.TextXAlignment = Enum.TextXAlignment.Left
+Features.TextYAlignment = Enum.TextYAlignment.Top
+Features.Font = Enum.Font.Gotham
+Features.TextSize = 16
+Features.TextColor3 = Color3.fromRGB(255,255,255)
+Features.Text =
+"🔥 24/7 Support\n⚡ Regular Features\n🛡 Safe & Secure\n👑 Made By SL Team\n🎮 Multi-Game Support\n🚀 Fast Execution\n💡 Easy To Use"
+
+-- RIGHT SIDE
+local Right = Instance.new("Frame", Main)
+Right.Size = UDim2.new(0.55,0,1,0)
+Right.Position = UDim2.new(0.45,0,0,0)
+Right.BackgroundTransparency = 1
+
+local KeyTitle = Instance.new("TextLabel", Right)
+KeyTitle.Size = UDim2.new(1,0,0,60)
+KeyTitle.BackgroundTransparency = 1
+KeyTitle.Text = "🔑 KEY SYSTEM 🔑"
+KeyTitle.Font = Enum.Font.GothamBold
+KeyTitle.TextSize = 20
+KeyTitle.TextColor3 = Color3.fromRGB(255,80,80)
+
+local Box = Instance.new("TextBox", Right)
+Box.Size = UDim2.new(0.8,0,0,45)
+Box.Position = UDim2.new(0.1,0,0.25,0)
+Box.PlaceholderText = "Enter Key Here..."
+Box.Font = Enum.Font.Gotham
+Box.TextSize = 16
+Box.BackgroundColor3 = Color3.fromRGB(25,25,25)
+Box.TextColor3 = Color3.fromRGB(255,255,255)
+Instance.new("UICorner", Box)
+
+local Verify = Instance.new("TextButton", Right)
+Verify.Size = UDim2.new(0.8,0,0,50)
+Verify.Position = UDim2.new(0.1,0,0.45,0)
+Verify.Text = "VERIFY KEY"
+Verify.Font = Enum.Font.GothamBold
+Verify.TextSize = 16
+Verify.BackgroundColor3 = Color3.fromRGB(255,0,0)
+Verify.TextColor3 = Color3.fromRGB(255,255,255)
+Instance.new("UICorner", Verify)
+
+local Discord = Instance.new("TextButton", Right)
+Discord.Size = UDim2.new(0.8,0,0,45)
+Discord.Position = UDim2.new(0.1,0,0.65,0)
+Discord.Text = "JOIN DISCORD"
+Discord.Font = Enum.Font.GothamBold
+Discord.TextSize = 15
+Discord.BackgroundColor3 = Color3.fromRGB(255,0,0)
+Discord.TextColor3 = Color3.fromRGB(255,255,255)
+Instance.new("UICorner", Discord)
+
+local GetKey = Instance.new("TextButton", Right)
+GetKey.Size = UDim2.new(0.8,0,0,45)
+GetKey.Position = UDim2.new(0.1,0,0.8,0)
+GetKey.Text = "GET KEY"
+GetKey.Font = Enum.Font.GothamBold
+GetKey.TextSize = 15
+GetKey.BackgroundColor3 = Color3.fromRGB(255,0,0)
+GetKey.TextColor3 = Color3.fromRGB(255,255,255)
+Instance.new("UICorner", GetKey)
