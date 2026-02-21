@@ -35,31 +35,10 @@ local Features = Instance.new("TextLabel", Left)
 Features.Size = UDim2.new(1,-20,1,-70)
 Features.Position = UDim2.new(0,10,0,60)
 Features.BackgroundTransparency = 1
-Features.Text = [[
-Features
-⚡ FAST
-🛡 SAFE
-👑 GOOD SCRIPTS
-🚫 ANTIBAN
-🚀 FAST EXECUTION
-💡 EASY TO USE
-📉 NO LAG
-👻 MADE BY SL_GHOST
-]]
+Features.Text = "Features\n⚡ FAST\n🛡 Safe\n👑 MADE BY SL_GHOST 👻"
+Features.TextColor3 = Color3.fromRGB(255,255,255)
 Features.TextXAlignment = Enum.TextXAlignment.Left
 Features.TextYAlignment = Enum.TextYAlignment.Top
-Features.Font = Enum.Font.GothamBold
-Features.TextSize = 16
-
--- RGB FEATURES
-task.spawn(function()
-	while true do
-		for i = 0,255 do
-			Features.TextColor3 = Color3.fromHSV(i/255,1,1)
-			task.wait(0.03)
-		end
-	end
-end)
 
 -- RIGHT
 local Right = Instance.new("Frame", Main)
@@ -105,6 +84,14 @@ GetKey.BackgroundColor3 = Color3.fromRGB(255,0,0)
 GetKey.TextColor3 = Color3.fromRGB(255,255,255)
 Instance.new("UICorner", GetKey)
 
+local MsgLabel = Instance.new("TextLabel", Right)
+MsgLabel.Size = UDim2.new(0.8,0,0,30)
+MsgLabel.Position = UDim2.new(0.1,0,0.75,0)
+MsgLabel.Text = ""
+MsgLabel.TextColor3 = Color3.fromRGB(255,0,0)
+MsgLabel.BackgroundTransparency = 1
+MsgLabel.TextScaled = true
+
 -- SCRIPTS FRAME
 local Scripts = Instance.new("Frame", Right)
 Scripts.Size = UDim2.new(1,0,0.55,0)
@@ -114,12 +101,12 @@ Scripts.Visible = false
 
 local Layout = Instance.new("UIListLayout", Scripts)
 Layout.Padding = UDim.new(0,6)
-Layout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 
 -- BUTTON CREATOR
 local function NewScript(name,link)
     local btn = Instance.new("TextButton", Scripts)
     btn.Size = UDim2.new(0.8,0,0,40)
+    btn.Position = UDim2.new(0.1,0,0,0)
     btn.Text = name
     btn.BackgroundColor3 = Color3.fromRGB(255,0,0)
     btn.TextColor3 = Color3.fromRGB(255,255,255)
@@ -131,9 +118,10 @@ local function NewScript(name,link)
     end)
 end
 
--- ANTI AFK (no hide)
+-- ANTI AFK RAW
 local Anti = Instance.new("TextButton", Scripts)
 Anti.Size = UDim2.new(0.8,0,0,40)
+Anti.Position = UDim2.new(0.1,0,0,0)
 Anti.Text = "ANTI AFK"
 Anti.BackgroundColor3 = Color3.fromRGB(255,0,0)
 Anti.TextColor3 = Color3.fromRGB(255,255,255)
@@ -148,7 +136,7 @@ end)
 -- GAME SCRIPTS
 NewScript("Muscle Legends","https://raw.githubusercontent.com/XMASFIRE/SL-HUB-D/refs/heads/main/SL%20HUB%20ML%20(1).txt")
 NewScript("Blox Fruits","https://raw.githubusercontent.com/XMASFIRE/SL-HUB-D/refs/heads/main/BloxFruits")
-NewScript("Legends Of Speed","https://raw.githubusercontent.com/XMASFIRE/SL-HUB-D/refs/heads/main/SL%20HUB%20LOS")
+NewScript("Legends Of Speed","LS_RAW_LINK")
 NewScript("Escape Tsunami","https://raw.githubusercontent.com/XMASFIRE/SL-HUB-D/refs/heads/main/Tusnammi.txt")
 
 -- KEY VERIFY
@@ -161,18 +149,22 @@ Verify.MouseButton1Click:Connect(function()
         KeyTitle.Text = "🔥 SCRIPTS"
         Scripts.Visible = true
     else
-        Verify.Text = "WRONG KEY"
+        MsgLabel.Text = "Wrong key ❌"
+        MsgLabel.Visible = true
+        task.delay(1,function()
+            MsgLabel.Visible = false
+        end)
     end
 end)
 
 -- GET KEY
 GetKey.MouseButton1Click:Connect(function()
-    setclipboard("KEY ")
-    GetKey.Text = "KEY COPIED"
+    setclipboard("SL-ML-2026")
+    GetKey.Text = "KEY COPIED ✅"
 end)
 
 -- DISCORD
 Discord.MouseButton1Click:Connect(function()
     setclipboard("https://discord.gg/yourserver")
-    Discord.Text = "INVITE COPIED"
+    Discord.Text = "DISCORD LINK COPIED ✅"
 end)
